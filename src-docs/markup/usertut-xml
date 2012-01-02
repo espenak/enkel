@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<summary>
+		A introduction to XML.
+	</summary>
+	<tag>Introduction</tag>
+	<section xmlns="http://enkel.wsgi.net/xml/markup"
+		xmlns:s="http://enkel.wsgi.net/xml/staticcms">
+
+<h>User tutorial - XML</h>
+
+<p>We wish to be able to use only the characters available on the
+keyboard to describe a layout similar to the one you are used to
+from editors like <em>Microsoft Word</em> or <em>OpenOffice
+Writer</em>. We want to be able to use <em>emphasized text</em>,
+<strong>strongly emphasized text</strong>, tables, lists,
+<a href="?">hyperlinks</a> and some other markup structures.</p>
+
+<p>But we do not have a button on keyboard which creates a table or
+a list. So we must use a markup language like <em>XML</em>.</p>
+
+<section>
+	<h>A simple XML example</h>
+	<p>
+		A part of the poem <em>348</em>
+		by <em>Emily Dickinson</em> with some extra markup:
+	<prog language="xml">
+<![CDATA[<p>I dreaded that first Robin, so,
+But <strong>He is mastered</strong>, now,
+I'm some accustomed to Him grown,
+He hurts a little, though-</p>
+
+<p>I thought if I could only live
+Till <em>that first Shout got by-</em>
+Not all Pianos                   in the Woods
+Had <a href="http://www.example.com">power</a> to
+
+mangle me-</p>]]></prog>
+	</p>
+
+	<section>
+		<h>The result might be something like this</h>
+
+		<p>I dreaded that first Robin, so,
+		But <strong>He is mastered</strong>, now,
+		I'm some accustomed to Him grown,
+		He hurts a little, though-</p>
+
+		<p>I thought if I could only live
+		Till <em>that first Shout got by-</em>
+		Not all Pianos                   in the Woods
+		Had <a href="http://www.example.com">power</a> to
+
+		mangle me-</p>
+	</section>
+
+	<section>
+		<h>Explaination</h>
+
+		<p><em>XML</em> uses <strong>elements</strong> and plain text
+		to give the plain text some meaning. A element:
+			<ul>
+				<li>Starts with &lt;<em>name of element</em>&gt;.</li>
+				<li>Contains text and child elements.</li>
+				<li>Ends with &lt;/<em>name of element</em>&gt;</li>
+			</ul>
+
+		General XML rules:
+			<ul>
+				<li>All whitespace between characters are interpeted
+				as one <em>space</em>. Whitespace includes newline,
+				tabs and normal spaces.</li>
+				
+				<li>You cannot use the characters <strong>&amp;</strong>,
+				<strong>&lt;</strong> or <strong>&gt;</strong>
+				unless you are writing a element. You must use the special
+				characters described below.</li>
+			</ul>
+
+		So how do we end up with the nicely formatted result?
+			<ul>
+				<li>We say that the <strong>p</strong> element represents
+				a paragraph. A paragraph is a block of text with
+				vertical space above and below.</li>
+
+				<li>The <strong>strong</strong> element represents
+				bold (or strongly emphasized) text.</li>
+
+				<li>The <strong>em</strong> element represents
+				italic (or emphasized text).</li>
+
+				<li>The <strong>a</strong> element represents a
+				hyperlink.</li>
+			</ul>
+		</p>
+
+		<p>What is that <strong>href=</strong> in the start of the 
+		<strong>a</strong> element?. That is called an attribute.
+		Attributes are used when the name of the element does not
+		describe its function well enough. Like a hyperlink, which
+		would be useless without the actual hyperlink target.</p>
+
+		<p>Sometimes you will use elements without any content. Only
+		a name and some attributes like <strong>&lt;image
+		href="myimage.jpg"&gt;&lt;/image&gt;</strong>. This can be
+		shortened to <strong>&lt;image href="myimage.jpg"/&gt;</strong>.</p>
+	</section>
+</section>
+
+
+<section>
+	<h>Special characters</h>
+
+	<p>
+		<table>
+			<hrow>
+				<hcell>Character</hcell>
+				<hcell>XML version</hcell>
+			</hrow>
+			<row><cell>&lt;</cell><cell>&amp;lt;</cell></row>
+			<row><cell>&gt;</cell><cell>&amp;gt;</cell></row>
+			<row><cell>&amp;</cell><cell>&amp;amp;</cell></row>
+		</table>
+	</p>
+</section>
+
+	</section>
+</post>

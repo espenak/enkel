@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<title>Åge er kul</title>
+	<summary>
+		Åge bare er såååå kul assa!
+	</summary>
+	<tag>Article</tag>
+	<tag>Om åge</tag>
+	<tag>Tullball</tag>
+	<section xmlns="http://enkel.wsgi.net/xml/exml">
+		<h>Åge er kul</h>
+		<p>
+			Dette er en test av staticcms.
+		</p>
+	</section>
+</post>

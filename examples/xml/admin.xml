@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<admin xmlns="http://enkel.wsgi.net/xml/admin">
+	<applist>
+		<app id="info" label="Information">
+			<action id="create" label="Create"/>
+			<action id="edit" label="Edit"/>
+		</app>
+		<app id="fp" label="Front-page">
+			<action id="edit" label="Edit"/>
+		</app>
+	</applist>
+
+	<selected app="info" action="create"/>
+
+	<section xmlns="http://enkel.wsgi.net/xml/markup">
+		<h>Create info-text</h>
+
+		<form action="http://localhost:8000/admin/info/save"
+				xmlns="http://enkel.wsgi.net/xml/form"
+				method="multipart" submit_label="Save">
+			<string id="id" required="yes" typehint="String">
+				<label>Identification</label>
+				<tooltip>You should write something here</tooltip>
+				<value>hehe</value>
+			</string>
+			<int id="id2" required="yes" typehint="MyInt">
+				<label>Identification 2</label>
+				<tooltip>You should write something here too</tooltip>
+				<value>700</value>
+				<error>validation failed!</error>
+			</int>
+
+			<group title="Personal info">
+				<string id="name" required="yes" typehint="String">
+					<label>Name</label>
+					<tooltip>Your name</tooltip>
+					<value>Peter Parker</value>
+				</string>
+				<date id="birth" required="no" typehint="Date">
+					<label>Birthdate</label>
+					<tooltip>yyyy-mm-dd</tooltip>
+					<value>1821-12-24</value>
+				</date>
+				<longstring id="about" required="yes" typehint="String">
+					<label>About</label>
+					<tooltip>About you</tooltip>
+					<value></value>
+				</longstring>
+			</group>
+
+			<group title="Languages">
+				<one id="lang" required="no" typehint="One">
+					<label>Language</label>
+					<tooltip>You preferred language</tooltip>
+					<onevalue>
+						<item value="en">English</item>
+						<sel_item value="nb">Norwegian</sel_item>
+						<item value="dk">Danish</item>
+					</onevalue>
+				</one>
+				<many id="ulang" required="no" typehint="Many">
+					<label>Languages</label>
+					<tooltip>Understandable languages</tooltip>
+					<manyvalue>
+						<item value="en">English</item>
+						<sel_item value="nb">Norwegian</sel_item>
+						<sel_item value="dk">Danish</sel_item>
+					</manyvalue>
+				</many>
+			</group>
+		</form>
+
+
+		<p>Example text for admin markup..Example text for admin markup..
+		Example text for admin markup..	Example text for admin markup..
+		Example text for admin markup.. Example text for admin markup..</p>
+
+		<section>
+			<h>A heading</h>
+			<p>
+				Example text for admin markup..Example text for admin markup..
+				Example text for admin markup..	Example text for admin markup..
+				Example text for admin markup.. Example text for admin markup..
+
+				<table>
+					<hrow>
+						<hcell>Name</hcell>
+						<hcell>id</hcell>
+					</hrow>
+					<row>
+						<cell>Peter parker</cell>
+						<cell>aXspider</cell>
+					</row>
+					<row>
+						<cell>A Test User</cell>
+						<cell>atu</cell>
+					</row>
+				</table>
+
+				<ul>
+					<li>List item</li>
+					<li>List item</li>
+					<li>List item</li>
+					<li>List item</li>
+				</ul>
+			</p>
+
+			<section>
+				<h>Sub section heading</h>
+				<p>
+					Some rules:
+					<ol>
+						<li>Do</li>
+						<li>things</li>
+						<li>as</li>
+						<li>easy</li>
+						<li>as</li>
+						<li>you possibly can manage without making it
+						difficult to understand;)</li>
+					</ol>
+				</p>
+			</section>
+		</section>
+	</section>
+</admin>

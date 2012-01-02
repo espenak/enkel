@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Defines a markup language with the <markup> element as
+root element -->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/markup">
+
+	<include href="markup/structural.rng"/>
+
+	<start>
+		<ref name="markup-element"/>
+	</start>
+
+</grammar>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+   <summary>
+A simple test in norwegian to demonstrate utf-8 support.
+   </summary>
+   <tag>
+Demo
+   </tag>
+   <tag>
+Tests
+   </tag>
+   <tag>
+Main
+   </tag>
+   <section xmlns="http://enkel.wsgi.net/xml/markup" xmlns:s="http://enkel.wsgi.net/xml/staticcms">
+      <h>
+En test på norsk
+      </h>
+<p>Dette en en test for å demonstrere at tegn utenfor ASCII slik som æ, ø og å kan brukes.</p>
+   </section>
+</post>

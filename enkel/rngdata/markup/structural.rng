@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/markup">
+
+
+	<include href="inline.rng"/>
+	<include href="table.rng"/>
+	<include href="list.rng"/>
+	<include href="media.rng"/>
+
+	<define name="pre-element">
+		<element name="pre">
+			<zeroOrMore>
+				<ref name="inline-elements"/>
+			</zeroOrMore>
+		</element>
+	</define>
+
+	<define name="prog-element">
+		<element name="prog">
+			<attribute name="language">
+				<text/>
+			</attribute>
+			<text/>
+		</element>
+	</define>
+
+
+	<define name="p-element">
+		<element name="p">
+			<interleave>
+				<ref name="inline-elements"/>
+				<zeroOrMore><ref name="pre-element"/></zeroOrMore>
+				<zeroOrMore><ref name="prog-element"/></zeroOrMore>
+				<zeroOrMore><ref name="ul-element"/></zeroOrMore>
+				<zeroOrMore><ref name="ol-element"/></zeroOrMore>
+				<zeroOrMore><ref name="table-element"/></zeroOrMore>
+				<zeroOrMore><ref name="image-element"/></zeroOrMore>
+			</interleave>
+		</element>
+	</define>
+
+	<define name="h-element">
+		<element name="h">
+			<text/>
+		</element>
+	</define>
+
+	<define name="section-children">
+		<interleave>
+			<zeroOrMore><ref name="p-element"/></zeroOrMore>
+			<zeroOrMore><ref name="section-element"/></zeroOrMore>
+		</interleave>
+	</define>
+
+	<define name="section-element">
+		<element name="section">
+			<ref name="h-element"/>
+			<ref name="section-children"/>
+		</element>
+	</define>
+
+	<define name="markup-element">
+		<element name="markup">
+			<ref name="section-children"/>
+		</element>
+	</define>
+</grammar>

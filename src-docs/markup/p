@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<summary>The &lt;p&gt; element represents a paragraph.</summary>
+	<tag>All elements</tag>
+	<tag>Structural elements</tag>
+	<tag>Inline parents</tag>
+	<section xmlns="http://enkel.wsgi.net/xml/markup"
+			xmlns:s="http://enkel.wsgi.net/xml/staticcms">
+		<h>p</h>
+		<p>
+			<strong>Contains:</strong>
+			Text and zero or more
+			<a s:post="pre">pre</a>, 
+			<a s:post="prog">prog</a>, 
+			<a s:post="ul">ul</a>, 
+			<a s:post="ol">ol</a>, 
+			<a s:post="table">table</a>,
+			<a s:post="image">image</a> and
+			<a s:tag="inline_elements">inline</a>
+			elements.
+		</p>
+		<p>
+			<strong>Contained by:</strong>
+			The <a s:post="section">section</a> element.
+		</p>
+		<p>
+
+		</p>
+	</section>
+</post>

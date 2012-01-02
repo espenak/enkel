@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Defines a language for mixing exml forms and markup. -->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/form">
+
+	<include href="section.rng"/>
+	<include href="form.rng"/>
+
+	<define name="section-children" combine="interleave">
+		<zeroOrMore><ref name="form-element"/></zeroOrMore>
+	</define>
+
+</grammar>

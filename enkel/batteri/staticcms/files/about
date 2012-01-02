@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<title>About</title>
+	<summary>
+		About us
+	</summary>
+	<tag>Article</tag>
+	<tag>Råviktig</tag>
+	<section xmlns="http://enkel.wsgi.net/xml/exml">
+		<h>Åge er kul ass</h>
+		<p>Dette er en test.</p>
+	</section>
+</post>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/markup"
+		datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+	<define name="cell-attr">
+		<optional>
+			<attribute name="rowspan">
+				<data type="positiveInteger"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="colspan">
+				<data type="positiveInteger"/>
+			</attribute>
+		</optional>
+	</define>
+
+	<define name="cell-element">
+		<element name="cell">
+			<ref name="cell-attr"/>
+			<ref name="inline-elements"/>
+		</element>
+	</define>
+
+	<define name="row-element">
+		<element name="row">
+			<oneOrMore>
+				<ref name="cell-element"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+
+	<define name="hcell-element">
+		<element name="hcell">
+			<ref name="cell-attr"/>
+			<text/>
+		</element>
+	</define>
+	<define name="hrow-element">
+		<element name="hrow">
+			<oneOrMore>
+				<ref name="hcell-element"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+
+	<define name="table-element">
+		<element name="table">
+			<interleave>
+				<zeroOrMore><ref name="row-element"/></zeroOrMore>
+				<zeroOrMore><ref name="hrow-element"/></zeroOrMore>
+			</interleave>
+		</element>
+	</define>
+
+</grammar>

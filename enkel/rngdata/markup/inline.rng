@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Defines the elements needed to markup inline text.
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/markup">
+
+	<!--
+	Inside inline elements
+	-->
+
+	<define name="sub-element">
+		<element name="sub">
+			<text/>
+		</element>
+	</define>
+
+	<define name="sup-element">
+		<element name="sup">
+			<text/>
+		</element>
+	</define>
+
+	<define name="inside-inline-elements">
+		<interleave>
+			<zeroOrMore><ref name="sub-element"/></zeroOrMore>
+			<zeroOrMore><ref name="sup-element"/></zeroOrMore>
+		</interleave>
+	</define>
+
+
+	<!--
+	Inline elements
+	-->
+
+	<define name="href-attribute">
+		<attribute name="href">
+			<text/>
+		</attribute>
+	</define>
+
+	<define name="inline-common">
+		<optional>
+			<ref name="href-attribute"/>
+		</optional>
+		<interleave>
+			<text/>
+			<ref name="inside-inline-elements"/>
+		</interleave>
+	</define>
+
+	<define name="a-element">
+		<element name="a">
+			<ref name="href-attribute"/>
+			<interleave>
+				<text/>
+				<ref name="inside-inline-elements"/>
+			</interleave>
+		</element>
+	</define>
+
+	<define name="strong-element">
+		<element name="strong">
+			<ref name="inline-common"/>
+		</element>
+	</define>
+
+	<define name="em-element">
+		<element name="em">
+			<ref name="inline-common"/>
+		</element>
+	</define>
+
+	<define name="code-element">
+		<element name="code">
+			<ref name="inline-common"/>
+		</element>
+	</define>
+
+	<define name="inline-elements">
+		<interleave>
+			<text/>
+			<zeroOrMore><ref name="strong-element"/></zeroOrMore>
+			<zeroOrMore><ref name="em-element"/></zeroOrMore>
+			<zeroOrMore><ref name="a-element"/></zeroOrMore>
+			<zeroOrMore><ref name="code-element"/></zeroOrMore>
+			<zeroOrMore><ref name="inside-inline-elements"/></zeroOrMore>
+		</interleave>
+	</define>
+
+
+	<define name="inline-element">
+		<!--
+		The inline element can be used as a root element in
+		documents which can only contain inline elements.
+		-->
+		<element name="inline">
+			<ref name="inline-elements"/>
+		</element>
+	</define>
+</grammar>

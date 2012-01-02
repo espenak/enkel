@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<summary>Lists all attributes.</summary>
+	<section xmlns="http://enkel.wsgi.net/xml/markup"
+			xmlns:s="http://enkel.wsgi.net/xml/staticcms">
+		
+		<h>Attributes</h>
+		<p>
+			<table>
+				<hrow>
+					<hcell>name</hcell>
+					<hcell>description</hcell>
+					<hcell>data-type</hcell>
+					<hcell>default value</hcell>
+					<hcell>required?</hcell>
+					<hcell>elements</hcell>
+				</hrow>
+				<row>
+					<cell>alt</cell>
+					<cell>
+						Alternative text if a image cannot be displayed.
+					</cell>
+					<cell>text</cell>
+					<cell/>
+					<cell>no</cell>
+					<cell><a s:post="image">image</a></cell>
+				</row>
+				<row>
+					<cell>colspan</cell>
+					<cell>The number of columns to span.</cell>
+					<cell>whole number</cell>
+					<cell>1</cell>
+					<cell>no</cell>
+					<cell>
+						<a s:post="row">row</a> and
+						<a s:post="hrow">hrow</a>
+					</cell>
+				</row>
+				<row>
+					<cell>float</cell>
+					<cell>
+						Defines where/how to float the text around
+						the image.
+					</cell>
+					<cell>
+						<em>left</em>, <em>right</em> or
+						<em>none</em>
+					</cell>
+					<cell>none</cell>
+					<cell>no</cell>
+					<cell><a s:post="image">image</a></cell>
+				</row>
+				<row>
+					<cell>href</cell>
+					<cell>A hyperlink to an external web page (a URL).</cell>
+					<cell>text</cell>
+					<cell/>
+					<cell>
+						Only by the <a s:post="a">a</a> and
+						<a s:post="image">image</a> elements.
+					</cell>
+					<cell>
+						<a s:post="a">a</a>,
+						<a s:post="code">code</a>,
+						<a s:post="strong">strong</a>,
+						<a s:post="em">em</a>
+						<a s:post="image">image</a>
+					</cell>
+				</row>
+				<row>
+					<cell>language</cell>
+					<cell>
+						The name of a programming language. You should
+						use lower case short forms of programming languages
+						like this: <em>python, c, c++, pascal, perl, sh,
+						bash, zsh, sh, csh, java, javascript, xml, xhtml,
+						html, c#, gas, delphi, fortran, sql</em>.
+					</cell>
+					<cell>text</cell>
+					<cell/>
+					<cell>yes</cell>
+					<cell>
+						<a s:post="prog">prog</a>
+					</cell>
+				</row>
+				<row>
+					<cell>rowspan</cell>
+					<cell>The number of rows to span.</cell>
+					<cell>whole number</cell>
+					<cell>1</cell>
+					<cell>no</cell>
+					<cell>
+						<a s:post="row">row</a> and
+						<a s:post="hrow">hrow</a>
+					</cell>
+				</row>
+				<row>
+					<cell>type</cell>
+					<cell>The mime-type of a file/image.</cell>
+					<cell>text</cell>
+					<cell/>
+					<cell>no</cell>
+					<cell><a s:post="image">image</a></cell>
+				</row>
+			</table>
+		</p>
+	</section>
+</post>

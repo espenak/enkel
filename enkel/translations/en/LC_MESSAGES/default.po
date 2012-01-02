@@ -1,0 +1,118 @@
+# English translations for Enkel package.
+# Copyright (C) 2007 Espen A. Kristiansen.
+# This file is distributed under the same license as the Enkel package.
+#  <xxespen@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enkel\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-22 03:26+0100\n"
+"PO-Revision-Date: 2007-02-22 03:26+0100\n"
+"Last-Translator:  <xxespen@gmail.com>\n"
+"Language-Team: English <en@translate.freefriends.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: enkel/error/http.py:35
+msgid "Page not found"
+msgstr "Page not found"
+
+#: enkel/error/http.py:36
+msgid "Could not find anything on the server mathing the requested URI"
+msgstr "Could not find anything on the server mathing the requested URI"
+
+#: enkel/error/http.py:43
+msgid "Forbidden"
+msgstr "Forbidden"
+
+#: enkel/model/dsources.py:37
+msgid "illegal value"
+msgstr "illegal value"
+
+#: enkel/model/field/reg.py:34
+msgid "can only contain english letters, numbers (0-9) and '_'"
+msgstr "can only contain english letters, numbers (0-9) and '_'"
+
+#: enkel/model/field/interface.py:21
+msgid "validation failed"
+msgstr "validation failed"
+
+#: enkel/model/field/base.py:25 enkel/model/field/base.py:48
+msgid "must be a whole number"
+msgstr "must be a whole number"
+
+#: enkel/model/field/base.py:69
+msgid "must be a floating-point number"
+msgstr "must be a floating-point number"
+
+#: enkel/model/field/base.py:116
+msgid "to few characters"
+msgstr "to few characters"
+
+#: enkel/model/field/base.py:118
+msgid "to many characters"
+msgstr "to many characters"
+
+#: enkel/model/field/base.py:122 enkel/model/field/base.py:148
+msgid "must be a unicode string"
+msgstr "must be a text string"
+
+#: enkel/model/field/base.py:180
+msgid "must be a datetime.date object"
+msgstr "must use this format: yyyy-mm-dd"
+
+#: enkel/model/field/base.py:211
+msgid "must be a datetime.time object"
+msgstr "must use this format: hh:mm:ss"
+
+#: enkel/model/field/base.py:243
+msgid "must be a datetime.datetime object"
+msgstr "must use this format: yyyy-mm-dd hh:mm:ss"
+
+#: enkel/reuse/table_admin.py:28
+msgid "Create"
+msgstr "Create"
+
+#: enkel/reuse/table_admin.py:29
+msgid "Delete"
+msgstr "Delete"
+
+#: enkel/reuse/table_admin.py:30
+msgid "Edit"
+msgstr "Edit"
+
+#: enkel/reuse/table_admin.py:31 enkel/reuse/table_admin.py:32
+#: enkel/reuse/table_admin.py:67
+msgid "Save"
+msgstr "Save"
+
+#: enkel/reuse/table_admin.py:33
+msgid "Browse"
+msgstr "Browse"
+
+#: enkel/reuse/table_admin.py:167
+msgid "edit"
+msgstr "edit"
+
+#: enkel/reuse/table_admin.py:173
+msgid "delete"
+msgstr "delete"
+
+#: enkel/reuse/table_admin.py:191
+msgid "previous"
+msgstr "previous"
+
+#: enkel/reuse/table_admin.py:197
+msgid "next"
+msgstr "next"
+
+#: enkel/reuse/table_admin.py:235
+msgid "save successful"
+msgstr "save successful"
+
+#: enkel/reuse/table_admin.py:247
+msgid "delete successful"
+msgstr "delete successful"

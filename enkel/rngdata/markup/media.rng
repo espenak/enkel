@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/markup"
+		datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+	<define name="image-element">
+		<element name="image">
+			<optional>
+				<attribute name="float">
+					<choice>
+						<value>left</value>
+						<value>right</value>
+						<value>none</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="type">
+					<text/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="width">
+					<data type="positiveInteger"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="height">
+					<data type="positiveInteger"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="alt">
+					<text/>
+				</attribute>
+			</optional>
+			<attribute name="href">
+				<text/>
+			</attribute>
+		</element>
+	</define>
+
+</grammar>

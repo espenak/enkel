@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Defines the list of tags used for XSLT processing. -->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+	<start>
+		<element name="tags">
+			<zeroOrMore>
+				<element name="tag">
+					<attribute name="id">
+						<text/>
+					</attribute>
+					<attribute name="name">
+						<text/>
+					</attribute>
+					<oneOrMore>
+						<element name="post">
+							<attribute name="id">
+								<text/>
+							</attribute>
+							<attribute name="src">
+								<text/>
+							</attribute>
+							<attribute name="mtime">
+								<text/>
+							</attribute>
+						</element>
+					</oneOrMore>
+				</element>
+			</zeroOrMore>
+		</element>
+	</start>
+
+</grammar>

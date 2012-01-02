@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Defines the xhtml produced by enkel.xhtml.formgen. -->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://www.w3.org/1999/xhtml">
+
+	<define name="common-field-attr">
+		<attribute name="name">
+			<text/>
+		</attribute>
+		<attribute name="id">
+			<text/>
+		</attribute>
+		<optional>
+			<attribute name="disabled">
+				<value>disabled</value>
+			</attribute>
+		</optional>
+	</define>
+
+	<define name="fields">
+		<zeroOrMore>
+			<element name="div">
+				<attribute name="class">
+					<text/>
+				</attribute>
+				<element name="label">
+					<attribute name="for">
+						<text/>
+					</attribute>
+					<text/>
+				</element>
+				<choice>
+					<element name="input">
+						<choice>
+							<group>
+								<attribute name="type">
+									<value>text</value>
+								</attribute>
+								<attribute name="value">
+									<text/>
+								</attribute>
+								<optional>
+									<attribute name="maxlength">
+										<text/>
+									</attribute>
+								</optional>
+							</group>
+							<group>
+								<attribute name="type">
+									<value>checkbox</value>
+								</attribute>
+								<attribute name="value">
+									<value>yes</value>
+								</attribute>
+								<optional>
+									<attribute name="checked">
+										<value>checked</value>
+									</attribute>
+								</optional>
+							</group>
+						</choice>
+						<ref name="common-field-attr"/>
+					</element>
+					<element name="textarea">
+						<attribute name="cols">
+							<text/>
+						</attribute>
+						<attribute name="rows">
+							<text/>
+						</attribute>
+						<ref name="common-field-attr"/>
+					</element>
+					<element name="select">
+						<attribute name="size">
+							<text/>
+						</attribute>
+						<optional>
+							<attribute name="multiple">
+								<value>multiple</value>
+							</attribute>
+						</optional>
+						<ref name="common-field-attr"/>
+						<zeroOrMore>
+							<element name="option">
+								<attribute name="value">
+									<text/>
+								</attribute>
+								<optional>
+									<attribute name="selected">
+										<value>selected</value>
+									</attribute>
+								</optional>
+								<text/>
+							</element>
+						</zeroOrMore>
+					</element>
+				</choice>
+				<element name="div"> <!-- help -->
+					<attribute name="class">
+						<text/>
+					</attribute>
+					<text/>
+				</element>
+				<optional>
+					<element name="div"> <!-- error -->
+						<attribute name="class">
+							<text/>
+						</attribute>
+						<text/>
+					</element>
+				</optional>
+			</element>
+		</zeroOrMore>
+	</define>
+
+
+	<define name="hidden-elements">
+		<zeroOrMore>
+			<choice>
+				<element name="input">
+					<attribute name="type">
+						<value>hidden</value>
+					</attribute>
+					<attribute name="name">
+						<text/>
+					</attribute>
+					<attribute name="value">
+						<text/>
+					</attribute>
+				</element>
+
+				<!-- This will only appear once at the bottom of the form,
+				but I could not manage to express that in relax-ng. -->
+				<element name="input">
+					<attribute name="type">
+						<value>submit</value>
+					</attribute>
+					<attribute name="value">
+						<text/>
+					</attribute>
+				</element>
+			</choice>
+		</zeroOrMore>
+	</define>
+
+
+	<start>
+		<element name="form">
+			<attribute name="action">
+				<text/>
+			</attribute>
+			<attribute name="method">
+				<text/>
+			</attribute>
+			<optional>
+				<attribute name="enctype">
+					<text/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="id">
+					<text/>
+				</attribute>
+			</optional>
+			<interleave>
+				<zeroOrMore>
+					<element name="fielset">
+						<element name="legend">
+							<text/>
+						</element>
+						<ref name="fields"/>
+						<ref name="hidden-elements"/>
+					</element>
+				</zeroOrMore>
+				<ref name="fields"/>
+				<ref name="hidden-elements"/>
+			</interleave>
+		</element>
+	</start>
+
+</grammar>

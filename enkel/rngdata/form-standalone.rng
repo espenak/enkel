@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Defines a language for mixing exml forms and markup. -->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/form">
+
+	<include href="form.rng"/>
+
+	<start>
+		<ref name="form-element"/>
+	</start>
+
+</grammar>

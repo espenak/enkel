@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2007 Espen A. Kristiansen
+# This file is distributed under the same license as the Enkel package.
+# Espen A. Kristiansen <xxespen@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enkel\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-22 14:09+0100\n"
+"PO-Revision-Date: 2007-02-02 00:46-0000\n"
+"Last-Translator: Espen A. Kristiansen <xxespen@gmail.com>\n"
+"Language-Team: Norwegian <xxespen@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Norwegian Bokmal\n"
+"X-Poedit-Country: NORWAY\n"
+"X-Poedit-KeywordsList: N_\n"
+"X-Poedit-Basepath: /home/espeak/code/newenkel/enkel\n"
+
+#: enkel/error/http.py:35
+msgid "Page not found"
+msgstr "Siden ikke funnet"
+
+#: enkel/error/http.py:36
+msgid "Could not find anything on the server mathing the requested URI"
+msgstr "Siden du søker finnes ikke på denne serveren"
+
+#: enkel/error/http.py:43
+msgid "Forbidden"
+msgstr "Forbudt område"
+
+#: enkel/model/dsources.py:37
+msgid "illegal value"
+msgstr "ulovlig verdi"
+
+#: enkel/model/field/reg.py:34
+msgid "can only contain english letters, numbers (0-9) and '_'"
+msgstr ""
+
+#: enkel/model/field/interface.py:21
+msgid "validation failed"
+msgstr "valideringen feilet"
+
+#: enkel/model/field/base.py:25 enkel/model/field/base.py:48
+msgid "must be a whole number"
+msgstr "må være et helt tall"
+
+#: enkel/model/field/base.py:69
+msgid "must be a floating-point number"
+msgstr "må være et flyttall"
+
+#: enkel/model/field/base.py:116
+msgid "to few characters"
+msgstr "for få tegn"
+
+#: enkel/model/field/base.py:118
+msgid "to many characters"
+msgstr "for mange tegn"
+
+#: enkel/model/field/base.py:122 enkel/model/field/base.py:148
+msgid "must be a unicode string"
+msgstr "må være en tekststreng med minst ett tegn"
+
+#: enkel/model/field/base.py:180
+msgid "must be a datetime.date object"
+msgstr "må være en dato på dette formatet: åååå-mm-dd"
+
+#: enkel/model/field/base.py:211
+msgid "must be a datetime.time object"
+msgstr "må være en tid-på en 24-timers klokke på dette formatet: tt:mm:ss"
+
+#: enkel/model/field/base.py:243
+msgid "must be a datetime.datetime object"
+msgstr "må være en fullstendig tid på dette formatet: åååå-mm-dd tt:mm:ss"
+
+#: enkel/reuse/table_admin.py:28
+msgid "Create"
+msgstr "Lag"
+
+#: enkel/reuse/table_admin.py:29
+msgid "Delete"
+msgstr "Slett"
+
+#: enkel/reuse/table_admin.py:30
+msgid "Edit"
+msgstr "Rediger"
+
+#: enkel/reuse/table_admin.py:31 enkel/reuse/table_admin.py:32
+#: enkel/reuse/table_admin.py:67
+msgid "Save"
+msgstr "Lagre"
+
+#: enkel/reuse/table_admin.py:33
+msgid "Browse"
+msgstr ""
+
+#: enkel/reuse/table_admin.py:167
+#, fuzzy
+msgid "edit"
+msgstr "Rediger"
+
+#: enkel/reuse/table_admin.py:173
+#, fuzzy
+msgid "delete"
+msgstr "Slett"
+
+#: enkel/reuse/table_admin.py:191
+msgid "previous"
+msgstr ""
+
+#: enkel/reuse/table_admin.py:197
+msgid "next"
+msgstr ""
+
+#: enkel/reuse/table_admin.py:235
+msgid "save successful"
+msgstr ""
+
+#: enkel/reuse/table_admin.py:247
+msgid "delete successful"
+msgstr ""

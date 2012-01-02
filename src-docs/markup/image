@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<summary>The &lt;image&gt; element defines a embedded image object.</summary>
+	<tag>All elements</tag>
+	<tag>Structural elements</tag>
+	<tag></tag>
+	<section xmlns="http://enkel.wsgi.net/xml/markup"
+			xmlns:s="http://enkel.wsgi.net/xml/staticcms">
+		<h>image</h>
+		<p>
+			<strong>Contains:</strong>
+			Text.
+		</p>
+		<p>
+			<strong>Contained by:</strong>
+			The <a s:post="p">p</a> element.
+		</p>
+		<p>
+			<strong s:post="attributes">Attributes:</strong>
+			href, float, alt and type.
+		</p>
+	</section>
+</post>

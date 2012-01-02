@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/form">
+
+
+	<define name="id-attribute">
+		<attribute name="id">
+			<text/>
+		</attribute>
+	</define>
+
+	<define name="field-common">
+		<interleave>
+			<ref name="id-attribute"/>
+			<attribute name="required">
+				<choice>
+					<value>yes</value>
+					<value>no</value>
+				</choice>
+			</attribute>
+			<attribute name="typehint">
+				<text/>
+			</attribute>
+			<element name="label">
+				<text/>
+			</element>
+			<element name="tooltip">
+				<text/>
+			</element>
+			<optional>
+				<element name="error">
+					<text/>
+				</element>
+			</optional>
+		</interleave>
+	</define>
+
+
+
+	<!--
+	Simple fields (with only one value)
+	-->
+
+	<define name="simple-field-common">
+		<interleave>
+			<ref name="field-common"/>
+			<element name="value">
+				<text/>
+			</element>
+		</interleave>
+	</define>
+
+	<define name="string-element">
+		<element name="string">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="longstring-element">
+		<element name="longstring">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="bool-element">
+		<element name="bool">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="int-element">
+		<element name="int">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="long-element">
+		<element name="long">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="date-element">
+		<element name="date">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="datetime-element">
+		<element name="datetime">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="time-element">
+		<element name="time">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="float-element">
+		<element name="float">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="text-element">
+		<element name="text">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="readonly-element">
+		<element name="readonly">
+			<ref name="simple-field-common"/>
+		</element>
+	</define>
+
+	<define name="hidden-element">
+		<element name="hidden">
+			<ref name="id-attribute"/>
+			<text/>
+		</element>
+	</define>
+
+
+
+	<!--
+	Advanced fields
+	-->
+
+	<define name="item-common">
+		<attribute name="value">
+			<text/>
+		</attribute>
+		<text/>
+	</define>
+
+	<define name="item-element">
+		<element name="item">
+			<ref name="item-common"/>
+		</element>
+	</define>
+
+	<define name="sel_item-element">
+		<element name="sel_item">
+			<ref name="item-common"/>
+		</element>
+	</define>
+
+	<define name="one-element">
+		<element name="one">
+			<interleave>
+				<ref name="field-common"/>
+				<element name="onevalue">
+					<interleave>
+						<optional>
+							<ref name="sel_item-element"/>
+						</optional>
+						<zeroOrMore><ref name="item-element"/></zeroOrMore>
+					</interleave>
+				</element>
+			</interleave>
+		</element>
+	</define>
+
+	<define name="many-element">
+		<element name="many">
+			<interleave>
+				<ref name="field-common"/>
+				<element name="manyvalue">
+					<interleave>
+						<zeroOrMore><ref name="sel_item-element"/></zeroOrMore>
+						<zeroOrMore><ref name="item-element"/></zeroOrMore>
+					</interleave>
+				</element>
+			</interleave>
+		</element>
+	</define>
+
+
+
+	<define name="group-element">
+		<element name="group">
+			<attribute name="title">
+				<text/>
+			</attribute>
+			<ref name="field-elements"/>
+		</element>
+	</define>
+
+	<define name="field-elements">
+		<interleave>
+			<zeroOrMore><ref name="string-element"/></zeroOrMore>
+			<zeroOrMore><ref name="longstring-element"/></zeroOrMore>
+			<zeroOrMore><ref name="bool-element"/></zeroOrMore>
+			<zeroOrMore><ref name="int-element"/></zeroOrMore>
+			<zeroOrMore><ref name="float-element"/></zeroOrMore>
+			<zeroOrMore><ref name="long-element"/></zeroOrMore>
+			<zeroOrMore><ref name="text-element"/></zeroOrMore>
+			<zeroOrMore><ref name="date-element"/></zeroOrMore>
+			<zeroOrMore><ref name="datetime-element"/></zeroOrMore>
+			<zeroOrMore><ref name="time-element"/></zeroOrMore>
+			<zeroOrMore><ref name="readonly-element"/></zeroOrMore>
+			<zeroOrMore><ref name="hidden-element"/></zeroOrMore>
+			<zeroOrMore><ref name="one-element"/></zeroOrMore>
+			<zeroOrMore><ref name="many-element"/></zeroOrMore>
+			<zeroOrMore><ref name="group-element"/></zeroOrMore>
+		</interleave>
+	</define>
+
+	<define name="form-element">
+		<element name="form">
+			<attribute name="action">
+				<text/>
+			</attribute>
+			<attribute name="submit_label">
+				<text/>
+			</attribute>
+			<attribute name="method">
+				<choice>
+					<value>post</value>
+					<value>get</value>
+					<value>multipart</value>
+				</choice>
+			</attribute>
+			<optional>
+				<attribute name="id">
+					<text/>
+				</attribute>
+			</optional>
+			<ref name="field-elements"/>
+		</element>
+	</define>
+
+</grammar>

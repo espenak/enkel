@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<summary>The &lt;pre&gt; element preserves whitespace in its content
+	and makes the result use a monospaced font.</summary>
+	<tag>All elements</tag>
+	<tag>Structural elements</tag>
+	<tag>Inline parents</tag>
+	<section xmlns="http://enkel.wsgi.net/xml/markup"
+			xmlns:s="http://enkel.wsgi.net/xml/staticcms">
+		<h>pre</h>
+		<p>
+			<strong>Contains:</strong>
+			Text and zero or more 
+			<a s:tag="inline_elements">inline</a>
+			elements.
+		</p>
+		<p>
+			<strong>Contained by:</strong>
+			The <a s:post="p">p</a> element.
+		</p>
+	</section>
+</post>

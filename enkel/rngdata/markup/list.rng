@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/markup">
+
+
+	<!--
+	List elements
+	-->
+
+	<define name="ul-element">
+		<element name="ul">
+			<oneOrMore>
+				<ref name="li-element"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="ol-element">
+		<element name="ol">
+			<oneOrMore>
+				<ref name="li-element"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="li-element">
+		<element name="li">
+			<interleave>
+				<ref name="inline-elements"/>
+				<zeroOrMore><ref name="ul-element"/></zeroOrMore>
+				<zeroOrMore><ref name="ol-element"/></zeroOrMore>
+			</interleave>
+		</element>
+	</define>
+
+</grammar>

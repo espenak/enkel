@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/admin">
+
+
+	<include href="formsection.rng">
+		<start>
+			<ref name="admin-element"/>
+		</start>
+	</include>
+
+
+	<define name="common-admin-attributes">
+		<attribute name="id">
+			<text/>
+		</attribute>
+		<attribute name="label">
+			<text/>
+		</attribute>
+	</define>
+
+	<define name="action-element">
+		<element name="action">
+			<ref name="common-admin-attributes"/>
+		</element>
+	</define>
+
+	<!--
+	The "adminapp" element is like a "section" element
+	with a "action" element as the first required element instead
+	of "h".
+	-->
+	<define name="adminapp-element">
+		<element name="adminapp">
+			<ref name="common-admin-attributes"/>
+			<ref name="action-element"/>
+			<ref name="section-children"/>
+		</element>
+	</define>
+
+	<define name="app-element">
+		<element name="app">
+			<ref name="common-admin-attributes"/>
+			<oneOrMore>
+				<ref name="action-element"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="applist-element">
+		<element name="applist">
+			<oneOrMore>
+				<ref name="app-element"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="selected-element">
+		<element name="selected">
+			<attribute name="app">
+				<text/>
+			</attribute>
+			<attribute name="action">
+				<text/>
+			</attribute>
+		</element>
+	</define>
+
+	<define name="admin-element">
+		<element name="admin">
+			<ref name="applist-element"/>
+			<ref name="selected-element"/>
+			<ref name="section-element"/>
+		</element>
+	</define>
+
+</grammar>

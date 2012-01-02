@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Defines the list of posts used as a base for XSLT processing. -->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+	<start>
+		<element name="posts">
+			<zeroOrMore>
+				<element name="post">
+					<attribute name="id">
+						<text/>
+					</attribute>
+					<attribute name="src">
+						<text/>
+					</attribute>
+					<attribute name="mtime">
+						<text/>
+					</attribute>
+				</element>
+			</zeroOrMore>
+		</element>
+	</start>
+
+</grammar>

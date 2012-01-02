@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<summary>Staticcms is a very simple cms system.</summary>
+	<tag>Documentation</tag>
+	<section xmlns="http://enkel.wsgi.net/xml/markup">
+		<h>About</h>
+		<p>
+			Staticcms is a very simple but flexible cms system.
+			It uses a repository of xml-files to generate output
+			using <em>XSLT</em> themes. So the <em>public</em>
+			cms is only static files. This makes it ideal for
+			servers which only serves static content and servers
+			with hight load.
+		</p>
+
+		<section>
+			<h>Structure</h>
+			<p>
+				The cms is really just a collection of xml-files. These
+				files or <em>posts</em> have text-markup and zero-or-more
+				<em>tags</em>.
+			</p>
+			<p>
+				Tags are used to cateogorize posts. A post can be tagged
+				with many tags, and many posts can share the same tag.
+			</p>
+		</section>
+
+		<section>
+			<h>Markup</h>
+			<p>
+				StaticCms uses the Enkel markup language
+				<strong>exml</strong>. This is a simple markup language
+				based on xhtml2.0, docbook and DITA markup. It supports
+				the usual inline markup, tables, list, headings,
+				hyperlinks and images.
+			</p>
+		</section>
+	</section>
+</post>

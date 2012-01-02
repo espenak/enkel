@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<post xmlns="http://enkel.wsgi.net/xml/staticcms">
+	<summary>A example.</summary>
+	<section xmlns="http://enkel.wsgi.net/xml/markup">
+		<h>Example</h>
+		<p>
+			A <strong>paragraph</strong> with some <em>inline</em>
+			markup and a list:
+			<ul>
+				<li>one</li>
+				<li>two</li>
+			</ul>
+		</p>
+
+		<section>
+			<h>A subsection</h>
+			<p>Sections can be nested ...</p>
+			<section>
+				<h>A even deeper subsection</h>
+				<p>... and by nesting sections we create a well structured
+				document from which we for example could render a <em>table
+				of contents</em>.</p>
+			</section>
+		</section>
+
+		<section>
+			<h>Tables are also supported</h>
+			<p>
+				<table>
+					<hrow>
+						<hcell>Name</hcell>
+						<hcell>Age</hcell>
+					</hrow>
+					<row>
+						<cell>John</cell>
+						<cell>20</cell>
+					</row>
+					<row>
+						<cell>Amy</cell>
+						<cell>24</cell>
+					</row>
+					<hrow>
+						<hcell colspan="2">
+							A heading in the middle of the table
+						</hcell>
+					</hrow>
+					<row>
+						<cell>Peter</cell>
+						<cell>40</cell>
+					</row>
+				</table>
+			</p>
+		</section>
+	</section>
+</post>

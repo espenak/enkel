@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/staticcms">
+
+	<include href="../markup/structural.rng"/>
+
+
+	 <define name="href-attribute" combine="choice">
+		<choice>
+			<attribute name="post"
+					ns="http://enkel.wsgi.net/xml/staticcms">
+				<text/>
+			</attribute>
+			<attribute name="tag"
+					ns="http://enkel.wsgi.net/xml/staticcms">
+				<text/>
+			</attribute>
+		</choice>
+	</define>
+
+
+	<define name="summary-element">
+		<element name="summary">
+			<text/>
+		</element>
+	</define>
+
+	<define name="tag-element">
+		<element name="tag">
+			<text/>
+		</element>
+	</define>
+
+	<define name="post-element">
+		<element name="post">
+			<ref name="summary-element"/>
+			<zeroOrMore>
+				<ref name="tag-element"/>
+			</zeroOrMore>
+			<ref name="section-element"/>
+		</element>
+	</define>
+
+	<start>
+		<ref name="post-element"/>
+	</start>
+
+</grammar>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Defines a xml language based on the inline module.
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+		ns="http://enkel.wsgi.net/xml/markup">
+
+	<include href="markup/inline.rng"/>
+
+	<start>
+		<ref name="inline-element"/>
+	</start>
+
+</grammar>
