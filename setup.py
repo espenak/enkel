@@ -5,7 +5,7 @@ setup(
 	name = "Enkel",
 	version = "1.0_rc7",
 	author = "Espen Angell Kristiansen",
-	author_email = "espen@wsgi.net",
+	author_email = "post@espenak.net",
 	url = "http://code.google.com/p/enkel/",
 	zip_safe=False,
 
